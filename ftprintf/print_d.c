@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:02:10 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/12 13:19:36 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/01/13 14:54:03 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ void		print_d(va_list arg, t_data *data)
 
 	space = ' ';
 	nb = what_conv(arg, data, 10);
+	if ((data->flag & 8) != 0 && nb[0] != '-')
+		nb = ft_strjoin("+", nb);
+	if ((data->flag & 16) != 0 && nb[0] != '-')
+		nb = ft_strjoin(" ", nb);
 	if (nb[0] == '-')
 		i = data->field - ft_max(ft_strlen(nb), data->prec + 1);
 	else

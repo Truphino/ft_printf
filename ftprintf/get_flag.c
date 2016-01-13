@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 14:19:47 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/09 12:46:05 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/01/13 14:52:05 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,6 @@ void		get_flag(char *str, t_data *data)
 	data->len_mod = get_len_mod(str + i);
 	if ((data->flag & 2) > 0 && (data->flag & 4) > 0)
 		data->flag = data->flag - 2;
+	if ((data->flag & 8) > 0 && (data->flag & 16) > 0)
+		data->flag = data->flag - 16;
 }
