@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_p.c                                          :+:      :+:    :+:   */
+/*   ft_strupper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/05 13:03:41 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/13 13:48:37 by trecomps         ###   ########.fr       */
+/*   Created: 2016/01/13 13:40:25 by trecomps          #+#    #+#             */
+/*   Updated: 2016/01/13 13:42:02 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_p(va_list arg, t_data *data)
+void		ft_strupper(char *str)
 {
-	data->flag = (data->flag | 1);
-	print_x(arg, data);
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		if ('a' <= str[i] && str[i] <= 'z')
+			str[i] = str[i] - 'a' + 'A';
+		i++;
+	}
 }

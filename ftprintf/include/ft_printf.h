@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 11:44:32 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/12 13:12:16 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/01/13 13:42:30 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ typedef struct			s_data
 	int					len_mod;
 }						t_data;
 
+void					ft_strupper(char *str);
 char					*what_conv(va_list arg, t_data *data, int base);
 char					*what_uconv(va_list arg, t_data *data, int base);
 char					*ullong_toa_base(unsigned long long n, int base);
 char					*llong_toa_base(long long n, int base);
 char					*ulong_toa_base(unsigned long n, int base);
+char					*long_toa_base(long n, int base);
 char					*long_toa_base(long n, int base);
 char					*short_toa_base(short int n, int base);
 char					*ushort_toa_base(unsigned short int n, int base);

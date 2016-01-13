@@ -6,7 +6,7 @@
 #    By: trecomps <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 16:45:26 by trecomps          #+#    #+#              #
-#    Updated: 2016/01/12 13:15:27 by trecomps         ###   ########.fr        #
+#    Updated: 2016/01/13 13:42:50 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,8 +78,10 @@ SRC=			ft_abs.c\
 				uint_toa_base.c\
 				ullong_toa_base.c\
 				ulong_toa_base.c\
+				long_toa_base.c\
 				ushort_toa_base.c\
-				what_conv.c
+				what_conv.c\
+				ft_strupper.c
 OBJ= 			$(SRC:.c=.o)
 IDIR=			./include
 

@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 11:44:32 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/12 12:02:54 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/01/13 13:32:49 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,22 @@ typedef struct			s_data
 	int					len_mod;
 }						t_data;
 
+char					*what_conv(va_list arg, t_data *data, int base);
+char					*what_uconv(va_list arg, t_data *data, int base);
+char					*ullong_toa_base(unsigned long long n, int base);
+char					*llong_toa_base(long long n, int base);
+char					*ulong_toa_base(unsigned long n, int base);
+char					*long_toa_base(long n, int base);
+char					*long_toa_base(long n, int base);
+char					*short_toa_base(short int n, int base);
+char					*ushort_toa_base(unsigned short int n, int base);
+char					*uchar_toa_base(unsigned char n, int base);
+char					*char_toa_base(char n, int base);
+char					*uint_toa_base(unsigned int n, int base);
 void					print_nb_str(char *nb, t_data *data);
 size_t					size_int_base(int n, int base);
 size_t					size_int(int n);
-char					*ft_itoa_base(int n, int base);
+char					*int_toa_base(int n, int base);
 int						ft_max(int a, int b);
 int						ft_len_int(int n, int base);
 void					ft_print_int(int n, int base, t_data *data);

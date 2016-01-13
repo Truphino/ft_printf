@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 16:55:43 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/12 12:26:56 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/01/13 13:54:46 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int				main(void)
 	int			j;
 
 	setlocale(LC_ALL, "en_US.UTF-8");
-	j = printf("%.16d\n", 34);
+	j = printf("C'est parti%5s %.2i test\n", "pour", 1);
 	ft_putstr("Printed :");
 	ft_putnbr(j);
 	ft_putchar('\n');
-	i = ft_printf("%.16d\n", 34);
+	i = ft_printf("C'est parti%5s %.2i test\n", "pour", 1);
 	ft_putstr("Printed :");
 	ft_putnbr(i);
 	ft_putchar('\n');
