@@ -6,7 +6,7 @@
 #    By: trecomps <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 16:45:26 by trecomps          #+#    #+#              #
-#    Updated: 2016/01/13 13:42:50 by trecomps         ###   ########.fr        #
+#    Updated: 2016/02/02 14:45:30 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,16 +81,22 @@ SRC=			ft_abs.c\
 				long_toa_base.c\
 				ushort_toa_base.c\
 				what_conv.c\
-				ft_strupper.c
+				ft_strupper.c\
+				size_long_base.c\
+				size_char_base.c\
+				size_llong_base.c\
+				size_short_base.c
 OBJ= 			$(SRC:.c=.o)
 IDIR=			./include
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) -c $(SRC) $(CFLAGS) -I $(IDIR)
+$(NAME): $(OBJ)
 	ar r $(NAME) $(OBJ)
 	ranlib $(NAME)
+
+%.o: %.c
+	$(CC) -o $@ -c $< $(CFLAGS) -I $(IDIR)
 
 re: fclean all
 

@@ -6,48 +6,12 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 16:55:43 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/13 14:54:47 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:09:57 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <locale.h>
-#include <stdio.h>
-
-void			(*g_lst_print[15])(va_list, t_data *) =
-{
-	print_s,
-	print_ls,
-	print_p,
-	print_d,
-	print_ld,
-	print_i,
-	print_o,
-	print_lo,
-	print_u,
-	print_lu,
-	print_x,
-	print_lx,
-	print_c,
-	print_lc,
-	print_per,
-};
-
-int				main(void)
-{
-	int			i;
-	int			j;
-
-	setlocale(LC_ALL, "en_US.UTF-8");
-	j = printf("% i\n", 24);
-	ft_putstr("Printed :");
-	ft_putnbr(j);
-	ft_putchar('\n');
-	i = ft_printf("% i\n", 24);
-	ft_putstr("Printed :");
-	ft_putnbr(i);
-	ft_putchar('\n');
-}
+#include "fct.h"
 
 static void		fd_conv(char *s, va_list arg, t_data *data)
 {

@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 12:56:05 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/13 14:03:48 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:06:25 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*what_uconv(va_list arg, t_data *data, int base)
 	if (data->len_mod == 2)
 		return (ullong_toa_base(va_arg(arg, unsigned long long), base));
 	if (data->len_mod == 4)
-		return (ushort_toa_base((unsigned short)va_arg(arg, unsigned int), base));
+		return (ushort_toa_base((unsigned short)va_arg(arg, unsigned), base));
 	if (data->len_mod == 8)
 		return (ulong_toa_base(va_arg(arg, unsigned long), base));
 	if (data->len_mod == 16)

@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 12:53:02 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/12 12:53:25 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/02 14:51:19 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char			*ullong_toa_base(unsigned long long n, int base)
 	char		*c;
 
 	c = "0123456789abcdef";
-	len = size_int_base(n, base);
+	len = size_ullong_base(n, base);
 	if ((res = ft_strnew(len)) == NULL)
 		return (NULL);
 	while (len > 0)

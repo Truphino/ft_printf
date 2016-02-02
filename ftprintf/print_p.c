@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:03:41 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/13 13:48:37 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/02 14:12:48 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void		print_p(va_list arg, t_data *data)
 {
 	data->flag = (data->flag | 1);
+	data->len_mod = 8;
 	print_x(arg, data);
 }

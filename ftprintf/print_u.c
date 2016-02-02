@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:01:05 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/13 13:47:08 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/02 14:30:56 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void		print_u(va_list arg, t_data *data)
 		ft_printchar(' ', data);
 	if ((data->flag & 4) == 0)
 		print_nb_str(nb, data);
+	free(nb);
 }
 
 void		print_lu(va_list arg, t_data *data)
