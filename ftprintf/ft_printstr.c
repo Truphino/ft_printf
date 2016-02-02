@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 13:58:31 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/09 14:28:19 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/02 18:35:41 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void		ft_printstr(char *str, t_data *data)
 {
 	int		prec;
 
-	prec = -1;
-	if (data->prec > 0)
-		prec = data->prec;
+	prec = data->prec;
 	while (prec != 0 && *str)
 	{
 		ft_printchar(*str, data);

@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 12:55:54 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/13 13:59:45 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/02 18:56:52 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ void			print_s(va_list arg, t_data *data)
 	if (data->len_mod == 8)
 		return (print_ls(arg, data));
 	str = va_arg(arg, char *);
-	i = data->field - ft_strlen(str);
+	if (!str)
+		return (ft_printstr("(null)", data));
+	if (data->prec != -1)
+		i = data->field - ft_min(ft_strlen(str), data->prec);
+	else
+		i = data->field - ft_strlen(str);
 	if ((data->flag & 4) != 0)
 		ft_printstr(str, data);
 	while (i-- > 0)

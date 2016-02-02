@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 11:44:32 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/02 14:54:28 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/02 20:23:01 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct			s_data
 	int					len_mod;
 }						t_data;
 
+int						ft_min(int a, int b);
 size_t					size_ushort_base(unsigned short n, int base);
 size_t					size_ulong_base(unsigned long n, int base);
 size_t					size_ullong_base(unsigned long long n, int base);
@@ -114,5 +115,6 @@ char					*ft_strncpy(char *dest, const char *src, size_t n);
 char					*ft_strnstr(const char *s1, const char *s2, size_t n);
 char					*ft_strrchr(const char *s, int c);
 char					*ft_strstr(const char *s1, const char *s2);
+int						ft_printf(char *format, ...);
 
 #endif
