@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct.h                                              :+:      :+:    :+:   */
+/*   ft_str_empty.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/02 15:07:09 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/02 16:54:01 by trecomps         ###   ########.fr       */
+/*   Created: 2016/02/04 18:45:31 by trecomps          #+#    #+#             */
+/*   Updated: 2016/02/04 18:49:14 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FCT_H
-# define FCT_H
-
 #include "ft_printf.h"
 
-void			(*g_lst_print[15])(va_list, t_data *) =
+char		*ft_str_empty(char *str)
 {
-	print_s,
-	print_ls,
-	print_p,
-	print_d,
-	print_ld,
-	print_i,
-	print_o,
-	print_lo,
-	print_u,
-	print_lu,
-	print_x,
-	print_lx,
-	print_c,
-	print_lc,
-	print_per,
-};
-
-#endif
+	free(str);
+	if ((str = (char *)ft_memalloc(1)) == NULL)
+		return (NULL);
+	return (str);
+}

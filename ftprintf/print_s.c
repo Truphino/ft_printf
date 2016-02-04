@@ -6,20 +6,20 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 12:55:54 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/02 18:56:52 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/04 13:08:36 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-void			print_s(va_list arg, t_data *data)
+void			print_s(t_data *data, va_list arg)
 {
 	int			i;
 	char		*str;
 
 	if (data->len_mod == 8)
-		return (print_ls(arg, data));
+		return (print_ls(data, arg));
 	str = va_arg(arg, char *);
 	if (!str)
 		return (ft_printstr("(null)", data));
@@ -35,7 +35,7 @@ void			print_s(va_list arg, t_data *data)
 		ft_printstr(str, data);
 }
 
-void			print_ls(va_list arg, t_data *data)
+void			print_ls(t_data *data, va_list arg)
 {
 	int			i;
 	wchar_t		*str;

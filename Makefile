@@ -6,14 +6,14 @@
 #    By: trecomps <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 16:45:26 by trecomps          #+#    #+#              #
-#    Updated: 2016/02/02 21:20:17 by trecomps         ###   ########.fr        #
+#    Updated: 2016/02/04 19:12:50 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=				gcc
 CFLAGS=			-Wall -Wextra -Werror
 NAME=			libftprintf.a
-SRC_NAME=			ft_abs.c\
+SRC_NAME=		ft_abs.c\
 				ft_atoi.c\
 				ft_itoa.c\
 				ft_memalloc.c\
@@ -83,7 +83,8 @@ SRC_NAME=			ft_abs.c\
 				size_char_base.c\
 				size_llong_base.c\
 				size_short_base.c\
-				ft_printf.c
+				ft_printf.c\
+				ft_str_empty.c
 SRC_PATH=		ftprintf
 OBJ_PATH=		objects
 OBJ_NAME=		$(SRC_NAME:.c=.o)
@@ -94,7 +95,7 @@ IDIR=			./include
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar r $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c

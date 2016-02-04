@@ -6,14 +6,15 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 15:09:08 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/02 19:06:18 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/04 19:33:35 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <limits.h>
 #include <locale.h>
 #include <stdio.h>
-#define PRINT ("%#.x, %#.0x\n", 0, 0)
+#define PRINT ("%i\n", ft_atoi("67u"))
 
 int				main(void)
 {

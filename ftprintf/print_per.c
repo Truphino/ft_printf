@@ -6,13 +6,13 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 12:57:14 by trecomps          #+#    #+#             */
-/*   Updated: 2016/01/13 13:58:58 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/04 13:12:43 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_per(va_list arg, t_data *data)
+void		print_per(t_data *data, va_list arg)
 {
 	int		i;
 	char	space;
