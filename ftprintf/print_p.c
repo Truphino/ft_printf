@@ -6,15 +6,16 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:03:41 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/04 13:09:06 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 14:15:30 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_p(t_data *data, va_list arg)
+int			print_p(t_data *data, va_list arg)
 {
-	data->flag = (data->flag | 1);
+	ft_printchar('0', data);
+	ft_printchar('x', data);
 	data->len_mod = 8;
-	print_x(data, arg);
+	return (print_x(data, arg));
 }

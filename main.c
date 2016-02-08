@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 15:09:08 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/04 19:33:35 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 14:55:12 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,29 @@
 #include <limits.h>
 #include <locale.h>
 #include <stdio.h>
-#define PRINT ("%i\n", ft_atoi("67u"))
+#define PRINT ("%hhs\n", "Salut")
+
+void			print_bin(char c)
+{
+	unsigned char	mask;
+
+	mask = 0b10000000;
+	while (mask > 0)
+	{
+		if (c & mask)
+			ft_putchar('1');
+		else
+			ft_putchar('0');
+		mask = mask >> 1;
+	}
+}
 
 int				main(void)
 {
 	int			i;
 	int			j;
 
-	setlocale(LC_ALL, "en_US.UTF-8");
+	setlocale(LC_ALL, "");
 	i = printf PRINT;
 	ft_putstr("Printf printed :");
 	ft_putnbr(i);

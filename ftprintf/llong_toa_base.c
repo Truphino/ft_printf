@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   long_toa_base.c                                    :+:      :+:    :+:   */
+/*   llong_toa_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/12 12:47:22 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/04 19:39:20 by trecomps         ###   ########.fr       */
+/*   Created: 2016/02/06 21:10:36 by trecomps          #+#    #+#             */
+/*   Updated: 2016/02/06 21:11:21 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ char					*llong_toa_base(long long n, int base)
 	len = size_llong_base(n, base);
 	if ((res = ft_strnew(len)) == NULL)
 		return (NULL);
-	tmp = ((n << 1) >> 1) + (n < 0);
+	tmp = (n < 0) ? -n : n;
+	if (n < 0)
+		res[0] = '-';
 	while (len > 0)
 	{
 		res[len] = c[tmp % base];

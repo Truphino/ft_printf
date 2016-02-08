@@ -6,7 +6,7 @@
 #    By: trecomps <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 16:45:26 by trecomps          #+#    #+#              #
-#    Updated: 2016/02/04 19:12:50 by trecomps         ###   ########.fr        #
+#    Updated: 2016/02/08 15:08:11 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,8 @@ SRC_NAME=		ft_abs.c\
 				size_llong_base.c\
 				size_short_base.c\
 				ft_printf.c\
-				ft_str_empty.c
+				ft_str_empty.c\
+				new_get_flag.c
 SRC_PATH=		ftprintf
 OBJ_PATH=		objects
 OBJ_NAME=		$(SRC_NAME:.c=.o)
@@ -109,3 +110,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+
+test: $(NAME)
+	$(CC) $(NAME) main.c -I include
+	./a.out

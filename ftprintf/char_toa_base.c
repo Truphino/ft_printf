@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   char_toa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 19:13:43 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/02 14:42:14 by trecomps         ###   ########.fr       */
+/*   Created: 2016/02/06 21:08:37 by trecomps          #+#    #+#             */
+/*   Updated: 2016/02/06 21:09:29 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char			*char_toa_base(char n, int base)
+char				*char_toa_base(char n, int base)
 {
-	size_t		len;
-	char		*res;
-	char		*c;
+	size_t			len;
+	char			*res;
+	char			*c;
+	unsigned char	tmp;
 
 	c = "0123456789abcdef";
-	if (n == -128)
-		return (ft_strdup("-128"));
 	len = size_char_base(n, base);
 	if ((res = ft_strnew(len)) == NULL)
 		return (NULL);
+	tmp = (n < 0) ? -n : n;
 	if (n < 0)
-	{
-		n = -n;
 		res[0] = '-';
-	}
 	while (len > 0)
 	{
-		res[len] = c[n % base];
-		n = n / base;
+		res[len] = c[tmp % base];
+		tmp = tmp / base;
 		len--;
 	}
 	if (res[len] != '-')
-		res[len] = c[n % base];
+		res[len] = c[tmp % base];
 	return (res);
 }

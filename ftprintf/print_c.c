@@ -6,13 +6,13 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 12:59:51 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/04 13:12:26 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 14:13:19 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_c(t_data *data, va_list arg)
+int			print_c(t_data *data, va_list arg)
 {
 	int		i;
 
@@ -25,9 +25,10 @@ void		print_c(t_data *data, va_list arg)
 		ft_printchar(' ', data);
 	if ((data->flag & 4) == 0)
 		ft_printchar((char)va_arg(arg, int), data);
+	return (1);
 }
 
-void		print_lc(t_data *data, va_list arg)
+int			print_lc(t_data *data, va_list arg)
 {
 	int		i;
 	int		c;
@@ -40,4 +41,5 @@ void		print_lc(t_data *data, va_list arg)
 		ft_printchar(' ', data);
 	if ((data->flag & 4) == 0)
 		ft_printwchar(c, data);
+	return (1);
 }

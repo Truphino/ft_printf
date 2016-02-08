@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 11:44:32 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/04 18:49:38 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 15:07:35 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct			s_data
 	int					len_mod;
 }						t_data;
 
+int						new_get_flag(char *str, t_data *data);
 char					*ft_str_empty(char *str);
 void					ft_memdel(void **ap);
 int						ft_isnb(int c);
@@ -75,21 +76,21 @@ int						count_byte(wchar_t c);
 size_t					ft_wstrlen(wchar_t *str);
 void					ft_putwchar(wchar_t c);
 void					ft_putwstr(wchar_t *str);
-void					print_s(t_data *data, va_list arg);
-void					print_ls(t_data *data, va_list arg);
-void					print_p(t_data *data, va_list arg);
-void					print_d(t_data *data, va_list arg);
-void					print_ld(t_data *data, va_list arg);
-void					print_i(t_data *data, va_list arg);
-void					print_o(t_data *data, va_list arg);
-void					print_lo(t_data *data, va_list arg);
-void					print_u(t_data *data, va_list arg);
-void					print_lu(t_data *data, va_list arg);
-void					print_x(t_data *data, va_list arg);
-void					print_lx(t_data *data, va_list arg);
-void					print_c(t_data *data, va_list arg);
-void					print_lc(t_data *data, va_list arg);
-void					print_per(t_data *data, va_list arg);
+int						print_s(t_data *data, va_list arg);
+int						print_ls(t_data *data, va_list arg);
+int						print_p(t_data *data, va_list arg);
+int						print_d(t_data *data, va_list arg);
+int						print_ld(t_data *data, va_list arg);
+int						print_i(t_data *data, va_list arg);
+int						print_o(t_data *data, va_list arg);
+int						print_lo(t_data *data, va_list arg);
+int						print_u(t_data *data, va_list arg);
+int						print_lu(t_data *data, va_list arg);
+int						print_x(t_data *data, va_list arg);
+int						print_lx(t_data *data, va_list arg);
+int						print_c(t_data *data, va_list arg);
+int						print_lc(t_data *data, va_list arg);
+int						print_per(t_data *data, va_list arg);
 int						ft_strpos(const char *s, int c);
 int						ft_printf(char *src, ...);
 int						ft_abs(int c);

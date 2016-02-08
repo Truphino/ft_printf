@@ -6,13 +6,13 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 16:55:43 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/04 13:12:45 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 15:18:30 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		fill(void (*lst_fct[15])(t_data *, va_list))
+static void		fill(int (*lst_fct[15])(t_data *, va_list))
 {
 	lst_fct[0] = &print_s;
 	lst_fct[1] = &print_ls;
@@ -31,8 +31,8 @@ static void		fill(void (*lst_fct[15])(t_data *, va_list))
 	lst_fct[14] = &print_per;
 }
 
-static void		fd_conv(char *s, va_list arg, t_data *data,
-		void (*lst_fct[15])(t_data *, va_list))
+static int		fd_conv(char *s, va_list arg, t_data *data,
+		int (*lst_fct[15])(t_data *, va_list))
 {
 	char		*conv;
 	int			i;
@@ -40,14 +40,17 @@ static void		fd_conv(char *s, va_list arg, t_data *data,
 
 	i = 1;
 	conv = "sSpdDioOuUxXcC%";
-	while (ft_strpos(conv, s[i]) == -1 && s[i])
+	ft_putchar(*s);
+	ft_putchar('\n');
+	while (s[i] && ft_strpos(conv, s[i]) == -1)
 		i++;
 	if (!s[i])
-		return (ft_putstr_fd("Conversion error\n", 2));
+		return (-1);
 	flags = ft_strnew(i);
 	flags = ft_strncpy(flags, s + 1, i);
-	get_flag(flags, data);
-	lst_fct[ft_strpos(conv, s[i])](data, arg);
+	if (new_get_flag(flags, data))
+		lst_fct[ft_strpos(conv, s[i])](data, arg);
+	return (1);
 }
 
 static void		ft_clear_data(t_data *data)
@@ -64,7 +67,7 @@ int				ft_printf(char *format, ...)
 	va_list		arg;
 	int			i;
 	t_data		*data;
-	void		(*lst_fct[15])(t_data *, va_list);
+	int			(*lst_fct[15])(t_data *, va_list);
 
 	i = 0;
 	fill(lst_fct);

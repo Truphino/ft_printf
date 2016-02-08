@@ -6,13 +6,13 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:01:05 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/04 18:54:31 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 14:18:08 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_u(t_data *data, va_list arg)
+int			print_u(t_data *data, va_list arg)
 {
 	char	*nb;
 	int		i;
@@ -32,9 +32,10 @@ void		print_u(t_data *data, va_list arg)
 	if ((data->flag & 4) == 0)
 		print_nb_str(nb, data, NULL);
 	free(nb);
+	return (1);
 }
 
-void		print_lu(t_data *data, va_list arg)
+int			print_lu(t_data *data, va_list arg)
 {
-	print_u(data, arg);
+	return (print_u(data, arg));
 }

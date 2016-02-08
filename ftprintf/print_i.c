@@ -6,13 +6,13 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:04:00 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/04 13:10:11 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 14:14:31 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_i(t_data *data, va_list arg)
+int			print_i(t_data *data, va_list arg)
 {
-	print_d(data, arg);
+	return (print_d(data, arg));
 }

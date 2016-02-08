@@ -6,36 +6,33 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 12:44:33 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/02 14:45:57 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/06 21:18:59 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char			*short_toa_base(short int n, int base)
+char				*short_toa_base(short int n, int base)
 {
-	size_t		len;
-	char		*res;
-	char		*c;
+	size_t			len;
+	char			*res;
+	char			*c;
+	unsigned short	tmp;
 
 	c = "0123456789abcdef";
-	if (n == -32767)
-		return (ft_strdup("-32767"));
 	len = size_short_base(n, base);
 	if ((res = ft_strnew(len)) == NULL)
 		return (NULL);
+	tmp = (n < 0) ? -n : n;
 	if (n < 0)
-	{
-		n = -n;
 		res[0] = '-';
-	}
 	while (len > 0)
 	{
-		res[len] = c[n % base];
-		n = n / base;
+		res[len] = c[tmp % base];
+		tmp = tmp / base;
 		len--;
 	}
 	if (res[len] != '-')
-		res[len] = c[n % base];
+		res[len] = c[tmp % base];
 	return (res);
 }
