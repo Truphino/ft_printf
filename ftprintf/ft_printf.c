@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 16:55:43 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/08 15:18:30 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 16:04:18 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,10 @@ static int		fd_conv(char *s, va_list arg, t_data *data,
 		int (*lst_fct[15])(t_data *, va_list))
 {
 	char		*conv;
-	int			i;
-	char		*flags;
 
-	i = 1;
 	conv = "sSpdDioOuUxXcC%";
-	ft_putchar(*s);
-	ft_putchar('\n');
-	while (s[i] && ft_strpos(conv, s[i]) == -1)
-		i++;
-	if (!s[i])
-		return (-1);
-	flags = ft_strnew(i);
-	flags = ft_strncpy(flags, s + 1, i);
-	if (new_get_flag(flags, data))
-		lst_fct[ft_strpos(conv, s[i])](data, arg);
+	if (new_get_flag(s, data))
+		lst_fct[ft_strpos(conv, s[data->len_for++])](data, arg);
 	return (1);
 }
 

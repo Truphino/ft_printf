@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 14:26:06 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/08 15:21:58 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 16:05:26 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int				new_get_flag(char *str, t_data *data)
 	field(str, data);
 	prec(str, data);
 	len_mod(str, data);
-	if (!ft_strchr(conv, str[data->len_mod]))
+	if (!ft_strchr(conv, str[data->len_for]))
 		return (0);
 	return (1);
 }
