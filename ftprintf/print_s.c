@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 12:55:54 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/08 14:17:33 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 17:05:52 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int				print_ls(t_data *data, va_list arg)
 	wchar_t		*str;
 
 	str = va_arg(arg, wchar_t *);
+	if (!str)
+	{
+		ft_printstr("(null)", data);
+		return (1);
+	}
 	i = data->field - sizewstr(str);
 	if ((data->flag & 4) != 0)
 		ft_printwstr(str, data);

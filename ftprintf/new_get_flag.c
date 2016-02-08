@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 14:26:06 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/08 16:05:26 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 16:44:53 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ static int		flag(char *str, t_data *data)
 	int			j;
 
 	flag = "#0-+ ";
-	while ((j = ft_strpos(flag, str[data->len_for]) > -1))
+	while (str[data->len_for] && (j = ft_strpos(flag, str[data->len_for])) > -1)
 	{
-		data->flag += ft_pow(2, j);
+		data->flag = data->flag | ft_pow(2, j);
 		data->len_for++;
 	}
 	if (data->flag == 0)
@@ -84,7 +84,11 @@ int				new_get_flag(char *str, t_data *data)
 	field(str, data);
 	prec(str, data);
 	len_mod(str, data);
-	if (!ft_strchr(conv, str[data->len_for]))
+	if (!str[data->len_for] || !ft_strchr(conv, str[data->len_for]))
 		return (0);
+	if ((data->flag & 2) && (data->flag & 4))
+		data->flag = data->flag - 2;
+	if ((data->flag & 8) && (data->flag & 16))
+		data->flag = data->flag - 16;
 	return (1);
 }

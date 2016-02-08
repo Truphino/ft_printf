@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 14:41:23 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/06 21:19:52 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 16:56:31 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t				size_char_base(char n, int base)
 		len++;
 		tmp = tmp / base;
 	}
-	return (len);
+	return (len + 1);
 }
 
 size_t				size_uchar_base(unsigned char n, int base)
@@ -37,5 +37,5 @@ size_t				size_uchar_base(unsigned char n, int base)
 		len++;
 		n = n / base;
 	}
-	return (len);
+	return (len + 1);
 }

@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:01:05 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/08 14:18:08 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 16:40:40 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int			print_u(t_data *data, va_list arg)
 
 int			print_lu(t_data *data, va_list arg)
 {
+	data->len_mod = 8;
 	return (print_u(data, arg));
 }

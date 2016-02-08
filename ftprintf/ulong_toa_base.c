@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 12:50:11 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/02 14:53:17 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 17:00:35 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char			*ulong_toa_base(unsigned long n, int base)
 	len = size_ulong_base(n, base);
 	if ((res = ft_strnew(len)) == NULL)
 		return (NULL);
+	len--;
 	while (len > 0)
 	{
 		res[len] = c[n % base];

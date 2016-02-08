@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 15:09:08 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/08 16:04:54 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 17:18:17 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <limits.h>
 #include <locale.h>
 #include <stdio.h>
-#define PRINT ("% Zoooo\n", "Salut")
+#define PRINT ()
 
 void			print_bin(char c)
 {
@@ -35,6 +35,7 @@ int				main(void)
 {
 	int			i;
 	int			j;
+	char		c;
 
 	setlocale(LC_ALL, "");
 	i = printf PRINT;

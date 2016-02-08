@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 12:47:22 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/06 21:16:32 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 16:59:50 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char					*long_toa_base(long n, int base)
 	len = size_long_base(n, base);
 	if ((res = ft_strnew(len)) == NULL)
 		return (NULL);
+	len--;
 	tmp = (n < 0) ? -n : n;
 	if (n < 0)
 		res[0] = '-';

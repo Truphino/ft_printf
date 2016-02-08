@@ -6,7 +6,7 @@
 #    By: trecomps <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 16:45:26 by trecomps          #+#    #+#              #
-#    Updated: 2016/02/08 15:08:11 by trecomps         ###   ########.fr        #
+#    Updated: 2016/02/08 16:53:08 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,6 @@ SRC_NAME=		ft_abs.c\
 				ft_print_int.c\
 				max.c\
 				int_toa_base.c\
-				size_int.c\
 				size_int_base.c\
 				print_nb_str.c\
 				char_toa_base.c\

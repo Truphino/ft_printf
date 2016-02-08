@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:00:15 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/08 14:15:03 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 17:12:21 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int			print_o(t_data *data, va_list arg)
 
 int			print_lo(t_data *data, va_list arg)
 {
+	data->len_mod = 8;
 	return (print_o(data, arg));
 }

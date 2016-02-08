@@ -6,7 +6,7 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 12:53:02 by trecomps          #+#    #+#             */
-/*   Updated: 2016/02/02 14:51:19 by trecomps         ###   ########.fr       */
+/*   Updated: 2016/02/08 17:00:26 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char			*ullong_toa_base(unsigned long long n, int base)
 	len = size_ullong_base(n, base);
 	if ((res = ft_strnew(len)) == NULL)
 		return (NULL);
+	len--;
 	while (len > 0)
 	{
 		res[len] = c[n % base];
